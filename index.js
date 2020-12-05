@@ -14,18 +14,18 @@ client.on('ready', () => {
     welcome(client)
     
     
-    command(client, 'help', (message) => {
+    command(client, ['help', 'h'], (message) => {
         message.channel.send(`   
     These are my supported commands:
 
-    **-help/h**            = _Displays the help menu_
-    **-ping**              = _Ping the bot_
-    **-life**              = _tells you about your life_
-    **-cc/clearchannel**   = _purge channel_
-    **-kick/yeet**         = _kick members_
-    **-ban**               = _ban members_
-    **-serverinfo/si**     = _Server info_
-    **-poll**              = _do a poll on the previous message_
+    **-help/h**                 = _Displays the help menu_
+    **-ping**                   = _Ping the bot_
+    **-life**                   = _tells you about your life_
+    **-cc/clearchannel**                    = _purge channel_
+    **-kick/yeet**                  = _kick members_
+    **-ban**                    = _ban members_
+    **-serverinfo/si**                  = _Server info_
+    **-poll**                   = _do a poll on the previous message_
      `)
     })
 
