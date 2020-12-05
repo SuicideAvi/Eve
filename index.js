@@ -4,12 +4,16 @@ const client = new Discord.Client()
 const config = require('./config.json')
 const command = require('./command')
 const poll = require('./poll')
+const welcome = require('./welcome')
 
 
 
 client.on('ready', () => {
     console.log('The client is ready!')
-
+    
+    welcome(client)
+    
+    
     command(client, ['help','h'], (message) => {
         const embed = new Discord.MessageEmbed().setTitle(`      
     These are my supported commands:
@@ -24,7 +28,9 @@ client.on('ready', () => {
      message.channel.send(embed)
     })
 
+
     poll(client)
+
 
     command(client, 'life', (message) => {
         message.channel.send('**You dont have a life**')
