@@ -14,18 +14,17 @@ client.on('ready', () => {
     welcome(client)
     
     
-    command(client, ['help','h'], (message) => {
-        const embed = new Discord.MessageEmbed().setTitle(`      
+    command(client, 'help', (message) => {
+        message.channel.send(`   
     These are my supported commands:
-    **-help/h** = Displays the help menu
+
+    ``**-help/h** = Displays the help menu
     **-ping** = Ping the bot
     **-cc/clearchannel** = purge channel
     **-kick/yeet** = kick members
     **-ban** = ban members
-    **-serverinfo/si** = Server info
+    **-serverinfo/si** = Server info``
      `)
-     .setFooter('Its not like i wanted to help you, hmph!')
-     message.channel.send(embed)
     })
 
 
