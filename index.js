@@ -16,16 +16,16 @@ client.on('ready', () => {
     
     command(client, 'help', (message) => {
         message.channel.send(`   
-    These are my supported commands:
+    _These are my supported commands:_
 
-    **-help/h**                    = _Displays the help menu_
-    **-ping**                        = _Ping the bot_
-    **-life**                        = _tells you about your life_
-    **-cc/clearchannel**    = _purge channel_
-    **-kick/yeet**               = _kick members_
-    **-ban**                         = _ban members_
-    **-serverinfo/si**           = _Server info_
-    **-poll**                         = _make a poll on previous message_
+    **-help** = _Displays the help menu_
+    **-ping** = _Ping the bot_
+    **-life** = _tells you about your life_
+    **-cc/clearchannel** = _purge channel_
+    **-kick** = _kick member_
+    **-ban** = _ban member_
+    **-serverinfo/si** = _Server info_
+    **-poll** = _make a poll on previous message_
      `)
     })
 
