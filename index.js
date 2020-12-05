@@ -18,12 +18,12 @@ client.on('ready', () => {
         message.channel.send(`   
     These are my supported commands:
 
-    ``**-help/h** = Displays the help menu
-    **-ping** = Ping the bot
-    **-cc/clearchannel** = purge channel
-    **-kick/yeet** = kick members
-    **-ban** = ban members
-    **-serverinfo/si** = Server info``
+    ``**:help/h** = Displays the help menu
+    **:ping** = Ping the bot
+    **:cc/clearchannel** = purge channel
+    **:kick/yeet** = kick members
+    **:ban** = ban members
+    **:serverinfo/si** = Server info``
      `)
     })
 
