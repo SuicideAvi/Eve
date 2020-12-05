@@ -5,14 +5,11 @@ const config = require('./config.json')
 const command = require('./command')
 const poll = require('./poll')
 const welcome = require('./welcome')
-
+const memberCount =require('./member-count')
 
 
 client.on('ready', () => {
     console.log('The client is ready!')
-    
-    welcome(client)
-    
     
     command(client, 'help', (message) => {
         message.channel.send(`   
@@ -31,7 +28,9 @@ client.on('ready', () => {
 
 
     poll(client)
-
+    welcome(client)
+    memberCount(client)
+    
 
     command(client, 'life', (message) => {
         message.channel.send('**You dont have a life**')
