@@ -18,14 +18,14 @@ client.on('ready', () => {
         message.channel.send(`   
     _These are my supported commands:_
 
-    **-help** = _Displays the help menu_
-    **-ping** = _Ping the bot_
-    **-life** = _tells you about your life_
-    **-cc/clearchannel** = _purge channel_
-    **-kick** = _kick member_
-    **-ban** = _ban member_
-    **-serverinfo/si** = _Server info_
-    **-poll** = _make a poll on previous message_
+    **-help** = _(Displays the help menu)_
+    **-ping** = _(Ping the bot)_
+    **-life** = _(tells you about your life)_
+    **-cc/clearchannel** = _(Purge channel)_
+    **-kick** = _(Kick member)_
+    **-ban** = _(Ban member)_
+    **-serverinfo/si** = _(Server info)_
+    **-poll** = _(Make a poll on previous message)_
      `)
     })
 
@@ -74,7 +74,7 @@ client.on('ready', () => {
             if (target) {
                 const targetMember = message.guild.members.cache.get(target.id)
                 targetMember.kick()
-                message.channel.send(`${tag} Yeeeeeeeeeet!`)
+                message.channel.send(`${tag} Sayonara. </3`)
 
                 } else {
                     message.channel.send(`${tag} Please specify someone to kick.`)
