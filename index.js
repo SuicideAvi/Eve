@@ -5,7 +5,7 @@ const config = require('./config.json')
 const command = require('./command')
 const poll = require('./poll')
 const welcome = require('./welcome')
-const memberCount = require('./member-count')
+
 
 
 client.on('ready', () => {
@@ -29,7 +29,6 @@ client.on('ready', () => {
 
     poll(client)
     welcome(client)
-    memberCount(client)
     
 
     command(client, 'life', (message) => {
