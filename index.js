@@ -20,11 +20,11 @@ client.on('ready', () => {
 
     **-help** = _(Displays the help menu)_
     **-ping** = _(Ping the bot)_
-    **-life** = _(tells you about your life)_
+    **-life** = _(Tells you about your life)_
     **-cc/clearchannel** = _(Purge channel)_
     **-kick** = _(Kick member)_
     **-ban** = _(Ban member)_
-    **-serverinfo/si** = _(Server info)_
+    **-serverinfo/si** = _(Shows the server info)_
     **-poll** = _(Make a poll on previous message)_
      `)
     })
