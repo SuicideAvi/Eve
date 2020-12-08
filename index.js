@@ -118,7 +118,7 @@ client.on('ready', () => {
         const { id, joinedAt } = member
 
         const embed = new Discord.MessageEmbed()
-            .setTitle(`Information for "${name}"`)
+            .setTitle(`Information for "${member.id}"`)
             .addFields(
             {
                 name: 'Member Info',
