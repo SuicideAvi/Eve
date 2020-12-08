@@ -7,7 +7,6 @@ const poll = require('./poll')
 const welcome = require('./welcome')
 
 
-
 client.on('ready', () => {
     console.log('The client is ready!')
     
@@ -29,7 +28,6 @@ client.on('ready', () => {
 
     poll(client)
     welcome(client)
-    
 
     command(client, 'life', (message) => {
         message.channel.send('**You dont have a life**')
@@ -82,6 +80,7 @@ client.on('ready', () => {
          }  
     })
 
+        
     command(client, ['serverinfo', 'si'], (message) => {
         const { guild } = message
 
@@ -125,6 +124,8 @@ client.on('ready', () => {
             message.channel.messages.fetch().then((results) => {
                 message.channel.bulkDelete(results)
                 })
+            } else {
+                message.channel.send(`${tag} You can't use this command:) `)
             }
         })
     command(client, 'status', message => {
