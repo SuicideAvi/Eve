@@ -46,7 +46,7 @@ client.on('ready', () => {
             if (target) {
                 const targetMember = message.guild.members.cache.get(target.id)
                 targetMember.ban()
-                message.channel.send(`${tag} User has been banned!`)
+                message.channel.send(`${targetMember} has been banned!`)
 
                 } else {
                     message.channel.send(`${tag} Please specify someone to ban.`)
@@ -70,7 +70,7 @@ client.on('ready', () => {
             if (target) {
                 const targetMember = message.guild.members.cache.get(target.id)
                 targetMember.kick()
-                message.channel.send(`${tag} Sayonara. </3`)
+                message.channel.send(`${targetMember} Sayonara. </3`)
 
                 } else {
                     message.channel.send(`${tag} Please specify someone to kick.`)
@@ -112,15 +112,13 @@ client.on('ready', () => {
     })
 
     command(client, ['memberinfo', 'mi'], (message) => {
-        const { member} = message
+        const { member, mentions } = message
 
 
         const { id, joinedAt } = member
-        const icon = member.avatarURL()
 
         const embed = new Discord.MessageEmbed()
             .setTitle(`Information for "${name}"`)
-            .setThumbnail(icon)
             .addFields(
             {
                 name: 'Member Info',
