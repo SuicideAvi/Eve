@@ -1,15 +1,22 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
-
+const mongo = require('./mongo')
 const config = require('./config.json')
 const command = require('./command')
 const poll = require('./poll')
 const welcome = require('./welcome')
 
 
-client.on('ready', () => {
+client.on('ready', async () => {
     console.log('The client is ready!')
     
+    await mongo().then((mongoose) => {
+        try {
+            console.log('Connected to mongo!')
+        } finally {
+            mongoose.connection.close()
+        }
+    })
     command(client, 'help', (message) => {
         message.channel.send(`   
     _These are my supported commands:_
