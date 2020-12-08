@@ -1,8 +1,9 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
-const mongo = require('./mongo')
+
 const config = require('./config.json')
 const command = require('./command')
+const mongo = require('./mongo')
 const poll = require('./poll')
 const welcome = require('./welcome')
 
@@ -14,8 +15,8 @@ client.on('ready', async () => {
         try {
             console.log('Connected to mongo!')
         } catch(e) {    
-              
-        }finally {
+
+        } finally {
             mongoose.connection.close()
         }
     })
