@@ -20,6 +20,7 @@ client.on('ready', async () => {
             mongoose.connection.close()
         }
     })
+    
     command(client, 'help', (message) => {
         message.channel.send(`   
     _These are my supported commands:_
