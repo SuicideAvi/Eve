@@ -84,7 +84,7 @@ client.on('ready', () => {
     command(client, ['serverinfo', 'si'], (message) => {
         const { guild } = message
 
-        const { name, region, memberCount, owner, afkTimeout } = guild
+        const { name, region, memberCount, owner, createdAt } = guild
         const icon = guild.iconURL()
 
         const embed = new Discord.MessageEmbed()
@@ -104,8 +104,8 @@ client.on('ready', () => {
                 value: owner.user.tag,
             },
             {
-                name: 'Afk Timeout',
-                value: afkTimeout / 60,
+                name: 'Found',
+                value: createdAt,
             }
         )
             message.channel.send(embed)
@@ -128,9 +128,7 @@ client.on('ready', () => {
                 message.channel.send(`You can't! :) `)
             }
         })
-    command(client, 'status', message => { 
-        if (
-        member.hasPermission('ADMINISTRATOR'))
+    command(client, 'status', message => {
         const content = message.content.replace('-status', '')
         //"!status hellow world" -> "hello world"
 
