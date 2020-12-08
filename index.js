@@ -111,6 +111,30 @@ client.on('ready', () => {
             message.channel.send(embed)
     })
 
+    command(client, ['memberinfo', 'mi'], (message) => {
+        const { member} = message
+
+
+        const { id, joinedAt } = member
+        const icon = member.avatarURL()
+
+        const embed = new Discord.MessageEmbed()
+            .setTitle(`Information for "${name}"`)
+            .setThumbnail(icon)
+            .addFields(
+            {
+                name: 'Member Info',
+                value: id,
+            },
+            {
+                name: 'Joined',
+                value: joinedAt,
+            }
+        )
+            message.channel.send(embed)
+    })
+
+
     const { prefix } = config
 
     client.user.setPresence({
