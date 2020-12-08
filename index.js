@@ -115,7 +115,7 @@ client.on('ready', () => {
 
     client.user.setPresence({
         activity:{
-            name: `"Use ${prefix}help" for help`,
+            name: `"${prefix}help"`,
         },
     })
 
@@ -128,7 +128,9 @@ client.on('ready', () => {
                 message.channel.send(`You can't! :) `)
             }
         })
-    command(client, 'status', message => {
+    command(client, 'status', message => { 
+        if (
+        member.hasPermission('ADMINISTRATOR'))
         const content = message.content.replace('-status', '')
         //"!status hellow world" -> "hello world"
 
