@@ -1,4 +1,4 @@
 {
     "prefix": "-",
-    "mongoPath": "mongodb://localhost:27107"
+    "mongoPath": "mongodb://localhost:27017"
 }
