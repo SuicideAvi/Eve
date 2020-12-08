@@ -14,12 +14,10 @@ client.on('ready', async () => {
     await mongo().then((mongoose) => {
         try {
             console.log('Connected to mongo!')
-        } catch(e) {    
-
-        } finally {
+      } finally {
             mongoose.connection.close()
         }
-    }) ().catch( e => { console.error(e) })
+    })
 
     command(client, 'help', (message) => {
         message.channel.send(`   
