@@ -14,13 +14,13 @@ client.on('ready', async () => {
     await mongo().then((mongoose) => {
         try {
             console.log('Connected to mongo!')
-        } catch(e) {    
+        } catch(error) {    
 
         } finally {
             mongoose.connection.close()
         }
     })
-    
+
     command(client, 'help', (message) => {
         message.channel.send(`   
     _These are my supported commands:_
