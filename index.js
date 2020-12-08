@@ -14,6 +14,7 @@ client.on('ready', async () => {
     await mongo().then((mongoose) => {
         try {
             console.log('Connected to mongo!')
+        } catch(e) {
       } finally {
             mongoose.connection.close()
         }
