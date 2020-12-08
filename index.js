@@ -76,7 +76,7 @@ client.on('ready', () => {
                     message.channel.send(`${tag} Please specify someone to kick.`)
             }
          } else {
-             message.channel.send(`${tag} Know your place you idiot.`)
+             message.channel.send(`${tag} Know your place idiot.`)
          }  
     })
 
@@ -125,7 +125,7 @@ client.on('ready', () => {
                 message.channel.bulkDelete(results)
                 })
             } else {
-                message.channel.send(`${tag} You can't use this command:) `)
+                message.channel.send(`You can't! :) `)
             }
         })
     command(client, 'status', message => {
