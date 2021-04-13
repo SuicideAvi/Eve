@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^12.4.1",
-    "mongoose": "^5.11.5"
+    "mongoose": "^5.11.5",
+    "redis": "^3.0.2"
   }
 }

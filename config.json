@@ -1,4 +1,6 @@
 {
     "prefix": "-",
-    "mongoPath": "mongodb://localhost:27017"
+    "token": "Nzc5NDU0MDMyNjk5ODUwNzkz.X7gxIg.wH9pPzyeaMyz-HKRrthCW7UjhbQ",
+    "mongoPath": "mongodb://localhost:27017/eve",
+    "redisPath": "//redis-19888.c74.us-east-1-4.ec2.cloud.redislabs.com:19888?password=liR64Ax1zf9qV8AJfM3mnYxkEuqGjY8P"
 }

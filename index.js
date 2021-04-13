@@ -1,15 +1,49 @@
+//  const path = require('path')
+//const fs = require('fs')
 const Discord = require('discord.js')
 const client = new Discord.Client()
 
+const EventEmitter = require('events')
+const emitter = new EventEmitter()
+EventEmitter.defaultMaxListeners = 50
+
+emitter.on('userJoin', (user) => {
+    console.log('event fired')
+    console.log(user)
+})
+
+emitter.emit('userJoin', {
+    user: 'eve',
+
+})
 const config = require('./config.json')
 const command = require('./command')
 const mongo = require('./mongo')
 const poll = require('./poll')
 const welcome = require('./welcome')
-
-
+const mute = require('./mute')
 client.on('ready', async () => {
     console.log('The client is ready!')
+
+    
+  //  const baseFile = 'command-base.js'
+   // const commandBase = require(`./commands/${baseFile}`)
+
+   // const readCommands = dir => {
+     //   const files = fs.readdirSync(path.join(__dirname, dir))
+   //     for (const file of files) {
+      //      const stat = fs.lstatSync(path.join(__dirname, dir, file))
+       //     if (stat.isDirectory()) {
+       //         readCommands(path.join(dir, file))
+        //    } else if (file !== baseFile) {
+         //       const option = require(path.join(__dirname, dir, file))
+         //       commandBase(client, option)
+                
+         //  }
+     //   }
+   // }
+
+    //readCommands('commands')
     
     await mongo().then((mongoose) => {
         try {
@@ -18,8 +52,14 @@ client.on('ready', async () => {
       } finally {
             mongoose.connection.close()
         }
-    })
 
+})
+
+    
+    poll(client)
+    welcome(client)
+    mute(client)
+    
     command(client, 'help', (message) => {
         message.channel.send(`   
     _These are my supported commands:_
@@ -32,15 +72,14 @@ client.on('ready', async () => {
     **-ban** = _(Ban member)_
     **-serverinfo/si** = _(Shows the server info)_
     **-poll** = _(Make a poll on previous message)_
+    **-setwelcome** = _(make welcome message)_
      `)
     })
 
 
-    poll(client)
-    welcome(client)
-
-    command(client, 'life', (message) => {
-        message.channel.send('**You dont have a life**')
+    
+    command(client, 'eve', (message) => {
+        message.channel.send('**Wut?**')
     })
 
     command(client, 'ban', message => {
@@ -147,7 +186,8 @@ client.on('ready', async () => {
 
     client.user.setPresence({
         activity:{
-            name: `"${prefix}help"`,
+            name: `"you sleep"`,
+            type: "WATCHING"
         },
     })
 
@@ -157,7 +197,7 @@ client.on('ready', async () => {
                 message.channel.bulkDelete(results)
                 })
             } else {
-                message.channel.send(`You can't! :) `)
+                message.channel.send(`You can't! :( `)
             }
         })
     command(client, 'status', message => {
@@ -173,4 +213,4 @@ client.on('ready', async () => {
     })
 })
 
-client.login(process.env.DJS_TOKEN)
+client.login(config.token)
